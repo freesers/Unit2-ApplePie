@@ -14,9 +14,22 @@ class StartViewController: UIViewController {
     
     @IBOutlet weak var difficultyLabel: UILabel!
     
+    @IBOutlet weak var welcomeLabel: UILabel!
+    var alreadyPlayed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // reset start screen 
+    override func viewWillAppear(_ animated: Bool) {
+        if alreadyPlayed == true {
+            welcomeLabel.text = "Welcome to Apple Pie! (again)"
+            difficultySlider.setValue(7.5, animated: true)
+        }
+    }
+    
+    
     
     @IBAction func sliderAdjusted(_ sender: UISlider) {
     
@@ -40,6 +53,7 @@ class StartViewController: UIViewController {
         if segue.destination is ViewController {
             let vc = segue.destination as? ViewController
             vc?.incorrectMovesAllowed = Int(difficultySlider.value)
+            alreadyPlayed = true
         }
     }
 }

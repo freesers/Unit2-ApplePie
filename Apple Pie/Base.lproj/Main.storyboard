@@ -385,6 +385,7 @@
                     <connections>
                         <outlet property="difficultyLabel" destination="Egn-bd-0M1" id="2Fl-bE-S2c"/>
                         <outlet property="difficultySlider" destination="cbp-9w-L8Z" id="715-0r-87V"/>
+                        <outlet property="welcomeLabel" destination="n5s-cd-67H" id="MTz-xY-T70"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N28-3w-l4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
