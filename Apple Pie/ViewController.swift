@@ -9,16 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // image outlet
     @IBOutlet weak var treeImageView: UIImageView!
     
+    // label outlets
     @IBOutlet weak var correctWordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    // button outlet
     @IBOutlet var letterButtons: [UIButton]!
     
+    // variables
     var listOfWords = ["forvm", "hockey", "apple", "windsurfen", "pizza", "groentijd"]
     var incorrectMovesAllowed = 7
+    
+    // new round at win or lose
     var totalWins = 0 {
         didSet {
             newRound()
@@ -32,12 +38,12 @@ class ViewController: UIViewController {
     
     var currentGame: Game!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         newRound()
     }
     
+    // start new round if still words in list
     func newRound() {
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
@@ -45,7 +51,14 @@ class ViewController: UIViewController {
             enableLetterButtons(true)
             updateUI()
         } else {
+            updateUI()
             enableLetterButtons(false)
+            // delay before dismissing view
+            // credits: owlswipe: https://stackoverflow.com/questions/38031137/how-to-program-a-delay-in-swift-3
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
         }
     }
     
@@ -55,6 +68,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // update labels and image
     func updateUI() {
         var letters = [String]()
         for letter in currentGame.formattedWord {
@@ -64,9 +78,13 @@ class ViewController: UIViewController {
         
         correctWordLabel.text = wordWithSpacing
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
-        treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
+        
+        // change index to max. 7 for image
+        let index = currentGame.incorrectMovesRemaining > 7 ? 7: currentGame.incorrectMovesRemaining
+        treeImageView.image = UIImage(named: "Tree \(index)")
     }
     
+    // update wins and losses
     func updateGameState() {
         if currentGame.incorrectMovesRemaining == 0 {
             totalLosses += 1
@@ -77,15 +95,13 @@ class ViewController: UIViewController {
         }
     }
 
+    // disable button and append to guessed letter
     @IBAction func buttonPressed(_ sender: UIButton) {
         sender.isEnabled = false
         let letterString = sender.title(for: .normal)!
         let letter = Character(letterString.lowercased())
         currentGame.playerGuessed(letter: letter)
         updateGameState()
-        
     }
-    
-    
 }
 

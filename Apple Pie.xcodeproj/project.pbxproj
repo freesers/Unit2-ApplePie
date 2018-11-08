@@ -13,6 +13,7 @@
 		11EDDD8121944DF500043EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EDDD8021944DF500043EAD /* Assets.xcassets */; };
 		11EDDD8421944DF500043EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EDDD8221944DF500043EAD /* LaunchScreen.storyboard */; };
 		11EDDD8C2194571D00043EAD /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDDD8B2194571D00043EAD /* Game.swift */; };
+		11EDDD9221947C6C00043EAD /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDDD9121947C6C00043EAD /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		11EDDD8321944DF500043EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11EDDD8521944DF500043EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11EDDD8B2194571D00043EAD /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		11EDDD9121947C6C00043EAD /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				11EDDD7921944DF400043EAD /* AppDelegate.swift */,
 				11EDDD7B21944DF400043EAD /* ViewController.swift */,
+				11EDDD9121947C6C00043EAD /* StartViewController.swift */,
 				11EDDD8B2194571D00043EAD /* Game.swift */,
 				11EDDD7D21944DF400043EAD /* Main.storyboard */,
 				11EDDD8021944DF500043EAD /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11EDDD7C21944DF400043EAD /* ViewController.swift in Sources */,
+				11EDDD9221947C6C00043EAD /* StartViewController.swift in Sources */,
 				11EDDD8C2194571D00043EAD /* Game.swift in Sources */,
 				11EDDD7A21944DF400043EAD /* AppDelegate.swift in Sources */,
 			);

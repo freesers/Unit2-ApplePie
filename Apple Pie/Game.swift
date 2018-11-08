@@ -13,9 +13,12 @@ struct Game {
     var incorrectMovesRemaining: Int
     var guessedLetters: [Character]
     
+    
     var formattedWord: String {
         var guessedWord = ""
         for letter in word {
+            
+            // check if guessed letter is in word
             if guessedLetters.contains(letter) {
                 guessedWord += "\(letter)"
             } else {
