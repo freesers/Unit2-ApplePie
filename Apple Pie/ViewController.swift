@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet var letterButtons: [UIButton]!
     
     // variables
-    var listOfWords = ["forvm", "hockey", "apple", "windsurfen", "pizza", "groentijd"]
+    var listOfWords = ["heuristieken", "hockey", "apple", "windsurfen", "pizza", "groentijd"]
     var incorrectMovesAllowed = 7
     
     // new round at win or lose
