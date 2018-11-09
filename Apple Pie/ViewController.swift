@@ -78,10 +78,7 @@ class ViewController: UIViewController {
         
         correctWordLabel.text = wordWithSpacing
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
-        
-        // change index to max. 7 for image
-        let index = currentGame.incorrectMovesRemaining > 7 ? 7: currentGame.incorrectMovesRemaining
-        treeImageView.image = UIImage(named: "Tree \(index)")
+        treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
     
     // update wins and losses
