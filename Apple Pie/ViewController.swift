@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     // button outlet
     @IBOutlet var letterButtons: [UIButton]!
     
-    // variables
+    
     var listOfWords = ["heuristieken", "hockey", "apple", "windsurfen", "pizza", "groentijd"]
     var incorrectMovesAllowed = 7
     
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         newRound()
     }
     
-    // start new round if still words in list
+    /// start new round if still words in list
     func newRound() {
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
@@ -53,9 +53,10 @@ class ViewController: UIViewController {
         } else {
             updateUI()
             enableLetterButtons(false)
+            
             // delay before dismissing view
             // credits: owlswipe: https://stackoverflow.com/questions/38031137/how-to-program-a-delay-in-swift-3
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.dismiss(animated: true, completion: nil)
             }
             
@@ -68,7 +69,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // update labels and image
+    /// update labels and image
     func updateUI() {
         var letters = [String]()
         for letter in currentGame.formattedWord {
@@ -79,9 +80,10 @@ class ViewController: UIViewController {
         correctWordLabel.text = wordWithSpacing
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
+        print(currentGame.incorrectMovesRemaining)
     }
     
-    // update wins and losses
+    /// update wins and losses
     func updateGameState() {
         if currentGame.incorrectMovesRemaining == 0 {
             totalLosses += 1
@@ -92,7 +94,7 @@ class ViewController: UIViewController {
         }
     }
 
-    // disable button and append to guessed letter
+    /// disable button and append to guessed letter
     @IBAction func buttonPressed(_ sender: UIButton) {
         sender.isEnabled = false
         let letterString = sender.title(for: .normal)!

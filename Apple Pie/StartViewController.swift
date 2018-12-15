@@ -11,10 +11,9 @@ import UIKit
 class StartViewController: UIViewController {
 
     @IBOutlet weak var difficultySlider: UISlider!
-    
     @IBOutlet weak var difficultyLabel: UILabel!
-    
     @IBOutlet weak var welcomeLabel: UILabel!
+   
     var alreadyPlayed = false
     
     override func viewDidLoad() {
@@ -25,24 +24,24 @@ class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if alreadyPlayed == true {
             welcomeLabel.text = "Welcome to Apple Pie! (again)"
-            difficultySlider.setValue(7.5, animated: true)
+            difficultySlider.setValue(7, animated: true)
         }
     }
     
     
-    
+    /// Updates label depening on de slider
     @IBAction func sliderAdjusted(_ sender: UISlider) {
     
         // change number of mistakes with slider
         switch sender.value {
-        case 1...3:
-            difficultyLabel.text = "Impossible"
-        case 3...6:
-            difficultyLabel.text = "Challenging"
-        case 6...10:
-            difficultyLabel.text = "Average"
-        case 10...14:
+        case 0...3:
             difficultyLabel.text = "Easy"
+        case 3...8:
+            difficultyLabel.text = "Average"
+        case 8...12:
+            difficultyLabel.text = "Challenging"
+        case 12...13:
+            difficultyLabel.text = "Impossible"
         default:
             difficultyLabel.text = "Average"
         }
@@ -51,8 +50,8 @@ class StartViewController: UIViewController {
     // move slider value over to Viewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ViewController {
-            let vc = segue.destination as? ViewController
-            vc?.incorrectMovesAllowed = Int(difficultySlider.value)
+            let viewController = segue.destination as? ViewController
+            viewController?.incorrectMovesAllowed =  14 - Int(difficultySlider.value)
             alreadyPlayed = true
         }
     }
