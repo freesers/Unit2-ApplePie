@@ -2,7 +2,7 @@
 
 A simple word-guessing game. Start by selecting your difficulty level and press "Play!" After the last word you will be redirected to the start page
 
-![alt text](https://github.com/freesers/Unit2-ApplePie/blob/master/doc/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(11-inch)%20-%202018-11-08%20at%2016.17.39.png)
+![alt text](https://github.com/freesers/Unit2-ApplePie/blob/master/doc/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(11-inch)%20-%202018-12-15%20at%2023.25.25.png)
 ![alt text](https://github.com/freesers/Unit2-ApplePie/blob/master/doc/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(11-inch)%20-%202018-11-08%20at%2016.17.47.png)
 
 # Run the app
